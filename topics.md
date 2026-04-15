@@ -2,6 +2,8 @@
 
 Each topic maps to one `.ipynb` notebook + one `.tts` audio script.
 
+> Neural networks, deep learning, and NLP are covered in a separate repo.
+
 ---
 
 ## Part 1: Foundations
@@ -83,48 +85,23 @@ Each topic maps to one `.ipynb` notebook + one `.tts` audio script.
 
 ---
 
-## Part 8: Neural Networks & Deep Learning
+## Part 8: End-to-End ML & Deployment
 
 | # | Topic | Notebook | Notes |
 |---|-------|----------|-------|
-| 31 | Neural Networks — The Basics | `31-neural-networks-basics.ipynb` | Perceptron, layers, activation functions |
-| 32 | Backpropagation & Gradient Descent | `32-backpropagation-gradient-descent.ipynb` | Chain rule in practice, SGD, Adam |
-| 33 | Training Deep Networks | `33-training-deep-networks.ipynb` | Batch norm, dropout, weight init, learning rate schedules |
-| 34 | Convolutional Neural Networks (CNNs) | `34-cnns.ipynb` | Filters, pooling, receptive fields, image classification |
-| 35 | Recurrent Neural Networks (RNNs) | `35-rnns.ipynb` | Sequences, hidden state, vanishing gradients |
-| 36 | LSTMs & GRUs | `36-lstms-grus.ipynb` | Gating mechanisms, long-range dependencies |
-| 37 | Transfer Learning & Fine-Tuning | `37-transfer-learning.ipynb` | Pretrained models, freezing layers, domain adaptation |
+| 31 | End-to-End ML Project — Loan Default Prediction | `31-end-to-end-loan-default.ipynb` | Full pipeline: EDA → features → model → eval (Fintech Bank) |
+| 32 | Pipelines with scikit-learn | `32-sklearn-pipelines.ipynb` | ColumnTransformer, Pipeline, avoiding leakage |
+| 33 | Saving & Loading Models | `33-saving-loading-models.ipynb` | joblib, pickle, ONNX |
+| 34 | Deploying ML Models to Production | `34-deploying-ml-models.ipynb` | Flask/FastAPI serving, Docker basics, REST endpoints |
 
 ---
 
-## Part 9: Natural Language Processing (NLP)
+## Part 9: Where to Go Next
 
 | # | Topic | Notebook | Notes |
 |---|-------|----------|-------|
-| 38 | Text Preprocessing | `38-text-preprocessing.ipynb` | Tokenization, stopwords, stemming, lemmatization |
-| 39 | Bag of Words & TF-IDF | `39-bow-tfidf.ipynb` | Sparse representations, document similarity |
-| 40 | Word Embeddings — Word2Vec & GloVe | `40-word-embeddings.ipynb` | Dense vectors, semantic relationships |
-| 41 | Transformers & Attention | `41-transformers-attention.ipynb` | Self-attention, positional encoding, BERT/GPT intuition |
+| 35 | Where to Go Next — Deep Learning, NLP & Certifications | `35-where-to-go-next.ipynb` | Pointer to deep-learning repo, NLP repo; certification roadmap |
 
 ---
 
-## Part 10: End-to-End ML & Deployment
-
-| # | Topic | Notebook | Notes |
-|---|-------|----------|-------|
-| 42 | End-to-End ML Project — Customer Churn | `42-end-to-end-customer-churn.ipynb` | Full pipeline: EDA → features → model → eval |
-| 43 | Pipelines with scikit-learn | `43-sklearn-pipelines.ipynb` | ColumnTransformer, Pipeline, avoiding leakage |
-| 44 | Saving & Loading Models | `44-saving-loading-models.ipynb` | joblib, pickle, ONNX |
-| 45 | Deploying ML Models to Production | `45-deploying-ml-models.ipynb` | Flask/FastAPI serving, Docker basics, REST endpoints |
-
----
-
-## Part 11: Where to Go Next
-
-| # | Topic | Notebook | Notes |
-|---|-------|----------|-------|
-| 46 | Where to Go Next — Deep Learning, NLP & Certifications | `46-where-to-go-next.ipynb` | Roadmap, resources, course recommendations |
-
----
-
-**Total: 46 topics**
+**Total: 35 topics**
