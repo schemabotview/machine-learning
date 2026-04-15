@@ -96,6 +96,37 @@ Audio is generated via `generate_audio_colab.ipynb` on Google Colab (T4 GPU):
 2. Generates `.wav` files using ChatterboxTTS
 3. Pushes each `.wav` to `audio/` via git commit
 
+## Domain: Fintech Bank
+
+All hands-on examples use **Fintech Bank** — a mid-size digital bank operating in India — as the consistent domain across every notebook. This is the same domain used in the apache-spark and data-engineer courses, giving learners a single mental model across all study tracks.
+
+**Business verticals:** Cards · Loans · Accounts · Payments
+**Schema reference:** https://github.com/schemabotview/Fintech
+
+Core tables and their ML relevance:
+
+| Table | ML use cases |
+|---|---|
+| `customers` | Features: credit_score, age, city, kyc_verified |
+| `loan_accounts` | Regression target: EMI amount; Classification: loan default (NPA) |
+| `loan_repayments` | Classification target: MISSED vs PAID repayment |
+| `card_transactions` | Classification target: is_fraud (fraud detection) |
+| `bank_accounts` | Clustering features: balance, account_type |
+| `payments` | Classification target: is_fraud; anomaly detection |
+
+**Data in notebooks:** Generate small in-memory DataFrames that match the Fintech schema — do not require file reads. Use `pandas.DataFrame(...)` with realistic Indian names, cities, and amounts. Keep datasets small (20–100 rows) so examples run instantly.
+
+## Model Complexity by Topic Position
+
+Match model complexity to where the topic falls in the learning sequence:
+
+- **Topics 01–05 (Foundations):** Only the simplest models — `LinearRegression`, `LogisticRegression`. No trees, no ensembles.
+- **Topics 06–10 (Data Prep):** No model training — focus on data transformation only.
+- **Topics 11–18 (Core Algorithms):** Introduce each algorithm as it is covered.
+- **Topics 19+ (Advanced):** Ensemble methods, neural networks, deployment.
+
+The first notebook a learner sees should never use a model that hasn't been introduced yet.
+
 ## Content Guidelines
 
 - Write theory in clear, beginner-friendly language

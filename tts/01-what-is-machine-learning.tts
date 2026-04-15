@@ -52,6 +52,16 @@ Don't use machine learning when a simple rule-based algorithm solves the problem
 
 The rule of thumb: reach for machine learning when data is your source of truth, not human expertise.
 
+Hands-On — Fintech Bank.
+
+Throughout this course, every hands-on example uses data from Fintech Bank — a mid-size digital bank operating in India. The bank has customers, loan accounts, card transactions, and payment records. Using one consistent domain means you can focus on the machine learning concepts rather than learning a new dataset in every notebook.
+
+Let's see supervised and unsupervised learning in action side by side.
+
+For supervised learning, we use the loan accounts table. Each row has a loan principal — the amount the customer borrowed — and a tenure in months. The label we want to predict is the monthly EMI, which is the fixed repayment amount. We fit a Linear Regression model, the simplest supervised model there is: it finds the straight line that best fits the relationship between principal, tenure, and EMI. Once trained, we give it a new customer — say, a six-lakh-rupee loan over sixty months — and it predicts the monthly EMI they should expect.
+
+For unsupervised learning, we use the customers table. Each customer has a credit score and an average monthly card spend. We pass just these two numbers to a KMeans clustering model — no labels, no answers, nothing to learn from except the data itself. KMeans discovers three natural groups: a Premium segment with high credit scores and high monthly spend, a Budget segment with lower scores and lower spend, and a Mid-tier segment in between. The bank can now design different products and offers for each group — and the model found those groups entirely on its own.
+
 Key Terminology.
 
 Before going further, you should know the vocabulary that comes up in every machine learning topic.
