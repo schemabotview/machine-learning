@@ -1,0 +1,10 @@
+{
+  "sections": [
+    {
+      "title": "Foundations",
+      "notebooks": [
+        "01-what-is-machine-learning"
+      ]
+    }
+  ]
+}
