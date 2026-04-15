@@ -3,7 +3,81 @@
     {
       "title": "Foundations",
       "notebooks": [
-        "01-what-is-machine-learning"
+        "01-what-is-machine-learning",
+        "02-the-ml-workflow",
+        "03-math-linear-algebra",
+        "04-math-calculus-probability",
+        "05-python-numpy-pandas"
+      ]
+    },
+    {
+      "title": "Data Preparation",
+      "notebooks": [
+        "06-exploratory-data-analysis",
+        "07-data-cleaning",
+        "08-feature-engineering",
+        "09-feature-selection",
+        "10-train-test-split-cross-validation"
+      ]
+    },
+    {
+      "title": "Supervised Learning — Regression",
+      "notebooks": [
+        "11-linear-regression",
+        "12-polynomial-regularized-regression",
+        "13-bias-variance-tradeoff"
+      ]
+    },
+    {
+      "title": "Supervised Learning — Classification",
+      "notebooks": [
+        "14-logistic-regression",
+        "15-k-nearest-neighbors",
+        "16-naive-bayes",
+        "17-support-vector-machines",
+        "18-decision-trees"
+      ]
+    },
+    {
+      "title": "Model Evaluation",
+      "notebooks": [
+        "19-classification-metrics",
+        "20-regression-metrics",
+        "21-hyperparameter-tuning"
+      ]
+    },
+    {
+      "title": "Ensemble Methods",
+      "notebooks": [
+        "22-bagging-random-forests",
+        "23-boosting-adaboost-gradient-boosting",
+        "24-xgboost-lightgbm",
+        "25-stacking-voting"
+      ]
+    },
+    {
+      "title": "Unsupervised Learning",
+      "notebooks": [
+        "26-k-means-clustering",
+        "27-hierarchical-clustering",
+        "28-dbscan",
+        "29-pca",
+        "30-tsne-umap"
+      ]
+    },
+    {
+      "title": "End-to-End ML & Deployment",
+      "notebooks": [
+        "31-end-to-end-loan-default",
+        "32-sklearn-pipelines",
+        "33-saving-loading-models",
+        "34-deploying-ml-models"
+      ]
+    },
+    {
+      "title": "Where to Go Next",
+      "notebooks": [
+        "35-where-to-go-next"
       ]
     }
   ]
