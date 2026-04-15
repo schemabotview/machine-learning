@@ -12,16 +12,6 @@ Traditional programming breaks down when there are too many edge cases to write 
 
 A concrete example makes this clear. Suppose you want to detect spam email. The traditional approach is to write rules: if the subject contains "free money", mark it as spam. This breaks almost immediately — spammers change wording constantly, and legitimate emails might trip the filter. The machine learning approach is to show the model thousands of examples of spam and non-spam emails. It discovers its own patterns — word frequencies, sender behavior, formatting quirks — and generalizes to emails it has never seen before.
 
-A Brief History.
-
-Machine learning has a longer history than most people realize.
-
-In 1950, Alan Turing proposed the Turing Test — asking whether a machine could think. In 1957, Frank Rosenblatt built the Perceptron, the first trainable neural network. The 1980s saw backpropagation rediscovered, giving neural networks a way to learn from errors. In 1986, Quinlan introduced decision trees with the ID3 algorithm. The 1990s brought Support Vector Machines, developed at Bell Labs.
-
-In 1997, IBM's Deep Blue defeated world chess champion Garry Kasparov. In 2001, Leo Breiman introduced Random Forests. In 2006, Geoffrey Hinton coined the term "deep learning" and showed that deep neural networks could actually be trained. In 2009, the ImageNet dataset launched — it would fuel the deep learning revolution. Then in 2012, AlexNet won the ImageNet competition by a huge margin, and the deep learning era truly began.
-
-In 2013, Word2Vec introduced dense word embeddings for natural language processing. In 2016, AlphaGo defeated the world Go champion — a landmark for reinforcement learning. In 2017, the Transformer architecture was introduced, laying the foundation for modern large language models. In 2020, GPT-3 demonstrated that scale alone could produce emergent capabilities. In 2022, ChatGPT launched and brought machine learning into mainstream public use. Today, machine learning is a core engineering skill across nearly every industry.
-
 The Three Types of Machine Learning.
 
 Almost every machine learning problem falls into one of three categories, defined by what kind of feedback the model receives during training.
@@ -62,18 +52,6 @@ For supervised learning, we use the loan accounts table. Each row has a loan pri
 
 For unsupervised learning, we use the customers table. Each customer has a credit score and an average monthly card spend. We pass just these two numbers to a KMeans clustering model — no labels, no answers, nothing to learn from except the data itself. KMeans discovers three natural groups: a Premium segment with high credit scores and high monthly spend, a Budget segment with lower scores and lower spend, and a Mid-tier segment in between. The bank can now design different products and offers for each group — and the model found those groups entirely on its own.
 
-Key Terminology.
-
-Before going further, you should know the vocabulary that comes up in every machine learning topic.
-
-A feature is an input variable used for prediction — like age, income, or a pixel value. A label or target is the output the model is trying to predict — like a price or a class. A sample or example is one row of data, a single data point.
-
-The training set is the data used to fit the model. The test set is held-out data used to evaluate how well the model generalizes. The model itself is the learned function that maps inputs to outputs.
-
-Parameters are the internal values the model learns — like the weights in linear regression. Hyperparameters are settings you choose before training — like learning rate or tree depth.
-
-Overfitting is when the model memorizes the training data but fails on new data. Underfitting is when the model is too simple and fails on both training and new data. Generalization is how well a model performs on data it hasn't seen. And inference is the act of using a trained model to make predictions on new inputs.
-
 Summary.
 
 Machine learning lets systems learn rules from data instead of having rules written by hand. The key shift is that traditional programming gives you Data plus Rules equals Output, while machine learning gives you Data plus Output equals Rules.
@@ -81,7 +59,5 @@ Machine learning lets systems learn rules from data instead of having rules writ
 There are three main types: Supervised learning, which learns from labeled examples; Unsupervised learning, which finds hidden structure without labels; and Reinforcement learning, which learns from rewards through trial and error.
 
 Use machine learning when the problem is too complex for rules, you have historical data, and the environment changes over time. Avoid it when simpler tools are sufficient.
-
-And the core vocabulary to carry forward: features, labels, training and test sets, parameters, hyperparameters, overfitting, generalization, and inference.
 
 In the next topic, we'll cover the ML Workflow — how a real machine learning project moves from raw data all the way to a deployed model.
