@@ -1,0 +1,176 @@
+<svg viewBox="0 0 620 248" width="620" height="248" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      /* ── Light ──────────────────────────────────────── */
+      .bg          { fill: #f9f9f8; }
+      .border      { stroke: #e8e8e4; }
+
+      /* Supervised — blue */
+      .sup-fill    { fill: #dbeafe; }
+      .sup-stroke  { stroke: #93c5fd; }
+      .sup-head    { fill: #2563eb; }
+      .sup-text    { fill: #1e40af; }
+      .sup-tag     { fill: #bfdbfe; }
+      .sup-tag-s   { stroke: #93c5fd; }
+
+      /* Unsupervised — green */
+      .uns-fill    { fill: #d1fae5; }
+      .uns-stroke  { stroke: #6ee7b7; }
+      .uns-head    { fill: #059669; }
+      .uns-text    { fill: #065f46; }
+      .uns-tag     { fill: #a7f3d0; }
+      .uns-tag-s   { stroke: #6ee7b7; }
+
+      /* Reinforcement — purple */
+      .rl-fill     { fill: #ede9fe; }
+      .rl-stroke   { stroke: #c4b5fd; }
+      .rl-head     { fill: #7c3aed; }
+      .rl-text     { fill: #5b21b6; }
+      .rl-tag      { fill: #ddd6fe; }
+      .rl-tag-s    { stroke: #c4b5fd; }
+
+      /* Neutral */
+      .title       { fill: #374151; }
+      .muted       { fill: #6b7280; }
+      .lbl         { font-family: system-ui, sans-serif; }
+
+      /* ── Dark ───────────────────────────────────────── */
+      @media (prefers-color-scheme: dark) {
+        .bg          { fill: #222220; }
+        .border      { stroke: #333330; }
+
+        .sup-fill    { fill: #1e3a5f; }
+        .sup-stroke  { stroke: #3b82f6; }
+        .sup-head    { fill: #1d4ed8; }
+        .sup-text    { fill: #93c5fd; }
+        .sup-tag     { fill: #1e3a8a; }
+        .sup-tag-s   { stroke: #3b82f6; }
+
+        .uns-fill    { fill: #052e16; }
+        .uns-stroke  { stroke: #22c55e; }
+        .uns-head    { fill: #15803d; }
+        .uns-text    { fill: #bbf7d0; }
+        .uns-tag     { fill: #14532d; }
+        .uns-tag-s   { stroke: #22c55e; }
+
+        .rl-fill     { fill: #2e1065; }
+        .rl-stroke   { stroke: #a78bfa; }
+        .rl-head     { fill: #6d28d9; }
+        .rl-text     { fill: #ddd6fe; }
+        .rl-tag      { fill: #3b0764; }
+        .rl-tag-s    { stroke: #a78bfa; }
+
+        .title       { fill: #e5e7eb; }
+        .muted       { fill: #9ca3af; }
+      }
+    </style>
+
+    <!-- clipPaths to round only the top corners of header bands -->
+    <clipPath id="clip-sup">
+      <rect x="14"  y="42" width="184" height="196" rx="7"/>
+    </clipPath>
+    <clipPath id="clip-uns">
+      <rect x="216" y="42" width="184" height="196" rx="7"/>
+    </clipPath>
+    <clipPath id="clip-rl">
+      <rect x="418" y="42" width="184" height="196" rx="7"/>
+    </clipPath>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="620" height="248" rx="10" class="bg border" stroke-width="1"/>
+
+  <!-- Page title -->
+  <text x="310" y="27" font-size="13" font-weight="700" text-anchor="middle" class="lbl title">Types of Machine Learning</text>
+
+  <!-- ══════════════════════════════════════════
+       CARD 1 — Supervised Learning  (blue)
+       x=14  cx=106
+  ══════════════════════════════════════════ -->
+  <rect x="14"  y="42" width="184" height="196" rx="7" class="sup-fill sup-stroke" stroke-width="1.5"/>
+  <!-- header band (clipped to card corners) -->
+  <rect x="14"  y="42" width="184" height="34" class="sup-head" clip-path="url(#clip-sup)"/>
+  <text x="106" y="64" font-size="11" font-weight="700" text-anchor="middle" fill="white" class="lbl">Supervised Learning</text>
+
+  <!-- signal + formula -->
+  <text x="106" y="92"  font-size="8.5" text-anchor="middle" class="lbl sup-text">Learns from labeled examples</text>
+  <text x="106" y="106" font-size="8"   text-anchor="middle" class="lbl sup-text">Data + Labels  →  Model  →  Prediction</text>
+
+  <!-- divider -->
+  <line x1="28" y1="116" x2="184" y2="116" stroke-width="0.8" class="sup-stroke"/>
+
+  <!-- sub-type label -->
+  <text x="106" y="130" font-size="8" font-weight="700" text-anchor="middle" class="lbl sup-text">SUB-TYPES</text>
+
+  <!-- sub-type pills -->
+  <rect x="22"  y="136" width="78" height="22" rx="5" class="sup-tag sup-tag-s" stroke-width="1"/>
+  <text x="61"  y="151" font-size="8.5" font-weight="600" text-anchor="middle" class="lbl sup-text">Regression</text>
+  <rect x="108" y="136" width="82" height="22" rx="5" class="sup-tag sup-tag-s" stroke-width="1"/>
+  <text x="149" y="151" font-size="8.5" font-weight="600" text-anchor="middle" class="lbl sup-text">Classification</text>
+
+  <!-- divider -->
+  <line x1="28" y1="168" x2="184" y2="168" stroke-width="0.8" class="sup-stroke"/>
+
+  <!-- examples -->
+  <text x="106" y="181" font-size="8" font-weight="700" text-anchor="middle" class="lbl sup-text">EXAMPLES</text>
+  <text x="106" y="194" font-size="8" text-anchor="middle" class="lbl sup-text">House price prediction</text>
+  <text x="106" y="207" font-size="8" text-anchor="middle" class="lbl sup-text">Spam detection</text>
+  <text x="106" y="220" font-size="8" text-anchor="middle" class="lbl sup-text">Medical diagnosis</text>
+  <text x="106" y="233" font-size="8" text-anchor="middle" class="lbl sup-text">Credit scoring</text>
+
+  <!-- ══════════════════════════════════════════
+       CARD 2 — Unsupervised Learning  (green)
+       x=216  cx=308
+  ══════════════════════════════════════════ -->
+  <rect x="216" y="42" width="184" height="196" rx="7" class="uns-fill uns-stroke" stroke-width="1.5"/>
+  <rect x="216" y="42" width="184" height="34" class="uns-head" clip-path="url(#clip-uns)"/>
+  <text x="308" y="64" font-size="11" font-weight="700" text-anchor="middle" fill="white" class="lbl">Unsupervised Learning</text>
+
+  <text x="308" y="92"  font-size="8.5" text-anchor="middle" class="lbl uns-text">Finds hidden structure in data</text>
+  <text x="308" y="106" font-size="8"   text-anchor="middle" class="lbl uns-text">Data only  →  Model  →  Patterns</text>
+
+  <line x1="230" y1="116" x2="386" y2="116" stroke-width="0.8" class="uns-stroke"/>
+
+  <text x="308" y="130" font-size="8" font-weight="700" text-anchor="middle" class="lbl uns-text">SUB-TYPES</text>
+
+  <rect x="222" y="136" width="72" height="22" rx="5" class="uns-tag uns-tag-s" stroke-width="1"/>
+  <text x="258" y="151" font-size="8.5" font-weight="600" text-anchor="middle" class="lbl uns-text">Clustering</text>
+  <rect x="302" y="136" width="96" height="22" rx="5" class="uns-tag uns-tag-s" stroke-width="1"/>
+  <text x="350" y="151" font-size="8.5" font-weight="600" text-anchor="middle" class="lbl uns-text">Dim. Reduction</text>
+
+  <line x1="230" y1="168" x2="386" y2="168" stroke-width="0.8" class="uns-stroke"/>
+
+  <text x="308" y="181" font-size="8" font-weight="700" text-anchor="middle" class="lbl uns-text">EXAMPLES</text>
+  <text x="308" y="194" font-size="8" text-anchor="middle" class="lbl uns-text">Customer segmentation</text>
+  <text x="308" y="207" font-size="8" text-anchor="middle" class="lbl uns-text">Topic modeling</text>
+  <text x="308" y="220" font-size="8" text-anchor="middle" class="lbl uns-text">Anomaly detection</text>
+  <text x="308" y="233" font-size="8" text-anchor="middle" class="lbl uns-text">Recommendation systems</text>
+
+  <!-- ══════════════════════════════════════════
+       CARD 3 — Reinforcement Learning  (purple)
+       x=418  cx=510
+  ══════════════════════════════════════════ -->
+  <rect x="418" y="42" width="184" height="196" rx="7" class="rl-fill rl-stroke" stroke-width="1.5"/>
+  <rect x="418" y="42" width="184" height="34" class="rl-head" clip-path="url(#clip-rl)"/>
+  <text x="510" y="64" font-size="11" font-weight="700" text-anchor="middle" fill="white" class="lbl">Reinforcement Learning</text>
+
+  <text x="510" y="92"  font-size="8.5" text-anchor="middle" class="lbl rl-text">Learns via trial and reward</text>
+  <text x="510" y="106" font-size="8"   text-anchor="middle" class="lbl rl-text">Agent + Env  →  Policy  →  Action</text>
+
+  <line x1="432" y1="116" x2="588" y2="116" stroke-width="0.8" class="rl-stroke"/>
+
+  <text x="510" y="130" font-size="8" font-weight="700" text-anchor="middle" class="lbl rl-text">SUB-TYPES</text>
+
+  <rect x="424" y="136" width="64" height="22" rx="5" class="rl-tag rl-tag-s" stroke-width="1"/>
+  <text x="456" y="151" font-size="8.5" font-weight="600" text-anchor="middle" class="lbl rl-text">Policy</text>
+  <rect x="496" y="136" width="86" height="22" rx="5" class="rl-tag rl-tag-s" stroke-width="1"/>
+  <text x="539" y="151" font-size="8.5" font-weight="600" text-anchor="middle" class="lbl rl-text">Value-based</text>
+
+  <line x1="432" y1="168" x2="588" y2="168" stroke-width="0.8" class="rl-stroke"/>
+
+  <text x="510" y="181" font-size="8" font-weight="700" text-anchor="middle" class="lbl rl-text">EXAMPLES</text>
+  <text x="510" y="194" font-size="8" text-anchor="middle" class="lbl rl-text">Game AI (AlphaGo)</text>
+  <text x="510" y="207" font-size="8" text-anchor="middle" class="lbl rl-text">Robot locomotion</text>
+  <text x="510" y="220" font-size="8" text-anchor="middle" class="lbl rl-text">Trading algorithms</text>
+  <text x="510" y="233" font-size="8" text-anchor="middle" class="lbl rl-text">LLM fine-tuning (RLHF)</text>
+</svg>

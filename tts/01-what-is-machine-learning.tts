@@ -1,0 +1,77 @@
+Machine learning is a subfield of artificial intelligence where systems learn patterns from data and make decisions — without being explicitly programmed for every scenario. Instead of writing rules by hand, you give a machine learning model examples, and it figures out the rules itself.
+
+Traditional Programming versus Machine Learning.
+
+The clearest way to understand machine learning is to contrast it with how software has traditionally been written.
+
+In traditional programming, you write explicit rules. The formula is: Data plus Rules gives you Output. You define every condition, every edge case, every branch of logic.
+
+In machine learning, you flip that around. The formula is: Data plus Output gives you Rules. You provide examples of inputs and their correct answers, and the machine discovers the pattern connecting them.
+
+Traditional programming breaks down when there are too many edge cases to write by hand. Machine learning thrives in exactly those situations — it scales with more data and adapts when the world changes.
+
+A concrete example makes this clear. Suppose you want to detect spam email. The traditional approach is to write rules: if the subject contains "free money", mark it as spam. This breaks almost immediately — spammers change wording constantly, and legitimate emails might trip the filter. The machine learning approach is to show the model thousands of examples of spam and non-spam emails. It discovers its own patterns — word frequencies, sender behavior, formatting quirks — and generalizes to emails it has never seen before.
+
+A Brief History.
+
+Machine learning has a longer history than most people realize.
+
+In 1950, Alan Turing proposed the Turing Test — asking whether a machine could think. In 1957, Frank Rosenblatt built the Perceptron, the first trainable neural network. The 1980s saw backpropagation rediscovered, giving neural networks a way to learn from errors. In 1986, Quinlan introduced decision trees with the ID3 algorithm. The 1990s brought Support Vector Machines, developed at Bell Labs.
+
+In 1997, IBM's Deep Blue defeated world chess champion Garry Kasparov. In 2001, Leo Breiman introduced Random Forests. In 2006, Geoffrey Hinton coined the term "deep learning" and showed that deep neural networks could actually be trained. In 2009, the ImageNet dataset launched — it would fuel the deep learning revolution. Then in 2012, AlexNet won the ImageNet competition by a huge margin, and the deep learning era truly began.
+
+In 2013, Word2Vec introduced dense word embeddings for natural language processing. In 2016, AlphaGo defeated the world Go champion — a landmark for reinforcement learning. In 2017, the Transformer architecture was introduced, laying the foundation for modern large language models. In 2020, GPT-3 demonstrated that scale alone could produce emergent capabilities. In 2022, ChatGPT launched and brought machine learning into mainstream public use. Today, machine learning is a core engineering skill across nearly every industry.
+
+The Three Types of Machine Learning.
+
+Almost every machine learning problem falls into one of three categories, defined by what kind of feedback the model receives during training.
+
+The first type is Supervised Learning. The model learns from labeled examples — every training sample has an input and a known correct output. You give it features, like a house's size, location, and age, and a label, like the sale price. The model learns a mapping from features to labels that generalizes to houses it has never seen.
+
+There are two sub-types of supervised learning. Regression is when the output is a continuous number — like a price, a temperature, or a risk score. Classification is when the output is a category — like spam or not spam, cat or dog, fraud or legitimate.
+
+Real-world supervised learning examples include email spam detection, house price prediction, medical diagnosis, and credit scoring.
+
+The second type is Unsupervised Learning. The model learns from unlabeled data — there are no correct answers to learn from. The goal is to find hidden structure in the data itself.
+
+Common unsupervised tasks include clustering, which groups similar items together, like segmenting customers by behavior. Dimensionality reduction compresses data while preserving its structure — useful for visualization and speeding up downstream models. Anomaly detection finds unusual points that don't fit the pattern.
+
+Real-world unsupervised examples include customer segmentation, topic modeling, fraud detection, and recommendation systems.
+
+The third type is Reinforcement Learning. An agent learns by interacting with an environment. It takes actions, receives rewards or penalties, and gradually learns a policy — a strategy that maximizes cumulative reward over time. There is no labeled dataset. The model learns from trial and error.
+
+Real-world reinforcement learning examples include game-playing AI like AlphaGo and chess engines, robotic locomotion, trading algorithms, and fine-tuning large language models with human feedback — a technique called RLHF.
+
+When Should You Use Machine Learning?
+
+Machine learning is powerful, but it is not always the right tool.
+
+Use it when the rules are too complex to write manually. Use it when the problem has too many variables or edge cases. Use it when you have lots of historical examples to learn from. And use it when the environment changes over time — a retrained model adapts; hardcoded rules don't.
+
+Don't use machine learning when a simple rule-based algorithm solves the problem cleanly. Don't use it when you have very little data — most models need at least a few hundred examples. Don't use it when the decision needs to be fully explainable for legal or compliance reasons. And don't use it when a lookup table, a SQL query, or a formula is sufficient.
+
+The rule of thumb: reach for machine learning when data is your source of truth, not human expertise.
+
+Key Terminology.
+
+Before going further, you should know the vocabulary that comes up in every machine learning topic.
+
+A feature is an input variable used for prediction — like age, income, or a pixel value. A label or target is the output the model is trying to predict — like a price or a class. A sample or example is one row of data, a single data point.
+
+The training set is the data used to fit the model. The test set is held-out data used to evaluate how well the model generalizes. The model itself is the learned function that maps inputs to outputs.
+
+Parameters are the internal values the model learns — like the weights in linear regression. Hyperparameters are settings you choose before training — like learning rate or tree depth.
+
+Overfitting is when the model memorizes the training data but fails on new data. Underfitting is when the model is too simple and fails on both training and new data. Generalization is how well a model performs on data it hasn't seen. And inference is the act of using a trained model to make predictions on new inputs.
+
+Summary.
+
+Machine learning lets systems learn rules from data instead of having rules written by hand. The key shift is that traditional programming gives you Data plus Rules equals Output, while machine learning gives you Data plus Output equals Rules.
+
+There are three main types: Supervised learning, which learns from labeled examples; Unsupervised learning, which finds hidden structure without labels; and Reinforcement learning, which learns from rewards through trial and error.
+
+Use machine learning when the problem is too complex for rules, you have historical data, and the environment changes over time. Avoid it when simpler tools are sufficient.
+
+And the core vocabulary to carry forward: features, labels, training and test sets, parameters, hyperparameters, overfitting, generalization, and inference.
+
+In the next topic, we'll cover the ML Workflow — how a real machine learning project moves from raw data all the way to a deployed model.
