@@ -131,6 +131,14 @@ Each course adds a `src/scenes/<courseId>/` bundle; list its scenes here as it l
 |  | `covariance` | scatter + Mahalanobis ellipse → computed table → 2-leaf container | §4 |
 |  | `alert-budget` | alerts-vs-threshold plot → table → 2-leaf container | §5 |
 |  | `shift` | alert-rate-by-zone plot over 2×2 container | §6 |
+| `responsible-use` | `interpretation-questions` | question table → 2×2 scope container | §1 |
+|  | `coefficients` | three-readings table → 2×2 container | §2 |
+|  | `permutation-pdp` | evolution (permutation importance) over PD + ICE plot | §3 |
+|  | `explanation-stability` | range-bar plot over 2×2 container | §4 |
+|  | `subgroups` | recall-interval plot over computed denominator table | §5 |
+|  | `fairness` | criteria table → 2×2 container | §6 |
+|  | `feedback` | 2×2 loop container → holdout table → 2-leaf container | §7 |
+|  | `model-card` | model-card table → 2-leaf container | §8 |
 
 ## Invariants — do not break
 
