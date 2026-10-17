@@ -1,0 +1,24 @@
+import type { Scene } from '@graphlearning/flow'
+import { problemFramingScenes } from './problem-framing'
+import { evaluationScenes } from './evaluation'
+import { regressionClassificationScenes } from './regression-classification'
+import { regularisationScenes } from './regularisation'
+import { modelFamiliesScenes } from './model-families'
+import { treesEnsemblesScenes } from './trees-ensembles'
+import { selectionScenes } from './selection'
+import { representationScenes } from './representation'
+import { clusteringScenes } from './clustering'
+import { anomalyScenes } from './anomaly'
+import { responsibleUseScenes } from './responsible-use'
+import { capstoneScenes } from './capstone'
+
+// Scene registry. Sections reference scenes by id; scenes are grouped by course (one folder each,
+// mirroring src/content). Ids are globally unique across courses, so the flat lookup below is
+// unambiguous. Courses are added here as each is authored.
+const ALL: Scene[] = [...problemFramingScenes, ...evaluationScenes, ...regressionClassificationScenes, ...regularisationScenes, ...modelFamiliesScenes, ...treesEnsemblesScenes, ...selectionScenes, ...representationScenes, ...clusteringScenes, ...anomalyScenes, ...responsibleUseScenes, ...capstoneScenes]
+
+export const SCENES: Record<string, Scene> = Object.fromEntries(ALL.map((s) => [s.id, s]))
+
+export function getScene(id: string): Scene | undefined {
+  return SCENES[id]
+}
