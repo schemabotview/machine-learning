@@ -53,7 +53,17 @@ prefixes, audio folders (`public/audio/<courseId>/`) and `scripts/titles.json` k
 
 ## Scene inventory
 
-None yet. Each course adds a `src/scenes/<courseId>/` bundle; list its scenes here as it lands.
+Each course adds a `src/scenes/<courseId>/` bundle; list its scenes here as it lands.
+
+| course | scene id | shape | used by |
+| --- | --- | --- | --- |
+| `problem-framing` | `paradigms` | source card → 3 containers × 4 leaves | §1 |
+| | `prediction-contract` | TB timeline container ⟶ table | §2 |
+| | `column-roles` | table → code card | §3 |
+| | `label-maturity` | plot (maturity curve + cutoff) over 3-leaf container | §4 |
+| | `sample-checks` | table → 2×2 container | §5 |
+| | `exclusion-log` | running-total table → 2×3 container | §6 |
+| | `prediction-vs-cause` | 2-leaf container → nested confounding graph | §7 |
 
 ## Invariants — do not break
 
@@ -111,9 +121,19 @@ builds green, reads correctly, and leaves half its pane empty. Against the ~1080
 | scene, area | ≥ 0.55 of the pane (w × h) | a wide board that fills the width but a third of the height wastes the pane |
 | eyebrow | no node under the top-left eyebrow label | boards that bind on height run up to y≈30 |
 
+**Measure it**: with `npm run dev` running, `npm run density [-- <courseId>] [--strict]` drives every
+route in capture mode at 1920×1080 and prints slide / binding-axis / area ratios with flags, plus a
+screenshot per route in `.tmp/density/`. `npm run check` also *warns* (does not fail) on a slide
+modelled under 865px. Rendered slide height runs ~0.95–1.0× the modelled figure — author to
+~920–990 modelled to land at 85–92 % on screen.
+
 Levers: **add real content, not padding**; **restack** a board toward the pane's ~1:1 aspect; lower
-scene `padding` to 0.04 for boards that float, **raise** it (0.12–0.17) for tall boards that touch
-the eyebrow.
+scene `padding` to 0.04 for boards that float, **raise** it for tall boards that touch the eyebrow —
+the engine default is already ~0.12, so 0.12 is a no-op here; 0.17 is the value that moves a board.
+
+Learned on chapter 1: an edge into a nested container's *card* is drawn across that container's
+header — target the container instead. A wide board (one long LR row) loses area; restack it into
+columns. Tables render small, so give them a companion node rather than standing alone.
 
 These are read off the rendered route by eye — `check` models no density at all. The two ratios come
 from one repo's ~80 frames of diagram-and-code-card boards, so a deliberately sparse board can sit
