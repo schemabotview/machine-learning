@@ -1,5 +1,5 @@
 import type { Scene, PlotPoint } from '@graphlearning/flow'
-import { blob, circle, rng } from './points'
+import { blob, circle, rng } from '../points'
 
 // An inner class surrounded by a ring: no straight line separates them, an RBF boundary does.
 const inner = blob(41, 22, 0, 0, 0.55)

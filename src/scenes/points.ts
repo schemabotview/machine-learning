@@ -1,6 +1,6 @@
 import type { PlotPoint } from '@graphlearning/flow'
 
-// Seeded synthetic 2-D data for this chapter's geometry plots. A fixed LCG keeps every frame
+// Seeded synthetic data for the geometry plots, shared by every course. A fixed LCG keeps every frame
 // reproducible: the same seed always draws the same points, so a recorded video never shifts.
 export function rng(seed: number) {
   let s = seed >>> 0

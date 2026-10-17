@@ -103,6 +103,14 @@ Each course adds a `src/scenes/<courseId>/` bundle; list its scenes here as it l
 |  | `stacking` | 2×2 base models → out-of-fold table → meta card | §6 |
 |  | `importance` | importance table → 2×2 container | §7 |
 |  | `tree-tradeoffs` | candidate table → 2×2 container | §8 |
+| `selection` | `cv-search` | search code card → fold-score table | §1 |
+|  | `ablation` | ablation table → 2×2 container | §2 |
+|  | `nested` | 2-leaf loop container → outer-fold table → locked card | §3 |
+|  | `slices` | paired fold plot over slice table | §4 |
+|  | `calibration` | reliability plot over 3-leaf container | §5 |
+|  | `thresholds` | cost-curve plot over computed count table | §6 |
+|  | `intervals` | quantile-band plot over coverage table | §7 |
+|  | `recommendation` | 2×2 sequence container → record table | §8 |
 
 ## Invariants — do not break
 
@@ -180,7 +188,7 @@ failure, so trim with one-line bullets rather than dropping a block. Prefer TB s
 table beside a tall stack shrinks to illegible. For an equal-axis plot that binds on height, widen its
 x-range rather than lowering padding (lower padding pushes it under the eyebrow). Plot geometry that
 a slide quotes (neighbours, support vectors, tube violations) is COMPUTED in the scene file from the
-seeded points in `points.ts`, never typed in, so slide and frame cannot disagree.
+seeded points in `src/scenes/points.ts`, never typed in, so slide and frame cannot disagree.
 
 These are read off the rendered route by eye — `check` models no density at all. The two ratios come
 from one repo's ~80 frames of diagram-and-code-card boards, so a deliberately sparse board can sit

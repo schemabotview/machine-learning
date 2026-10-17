@@ -1,5 +1,5 @@
 import type { Scene, PlotPoint } from '@graphlearning/flow'
-import { blob } from './points'
+import { blob } from '../points'
 
 // Two nearly separable classes. Boundary x + y = 0 with margins x + y = ±1 (illustrative fit).
 const pos = blob(31, 16, 0.8, 0.74, 0.8)

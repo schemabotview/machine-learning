@@ -1,5 +1,5 @@
 import type { Scene, PlotPoint } from '@graphlearning/flow'
-import { blob } from './points'
+import { blob } from '../points'
 
 // Class A is round and tight; class B is wide. LDA must assume one shared covariance, so its
 // boundary is a line. QDA fits one covariance per class: far from both centres the wider class B is

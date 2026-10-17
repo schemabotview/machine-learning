@@ -1,5 +1,5 @@
 import type { Scene, PlotPoint } from '@graphlearning/flow'
-import { blob, circle } from './points'
+import { blob, circle } from '../points'
 
 // Two synthetic classes on two scaled features. The table is COMPUTED from the plotted points: the
 // query's five nearest training orders, their distances and classes, and the resulting vote. The
