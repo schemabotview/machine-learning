@@ -50,6 +50,10 @@ const LINE_SUB = 15.6 // 13px × 1.2
 // 1000 costs two bullets a slide and makes the frame safe to review anywhere. The `models` course,
 // authored before this was found, sits at 753–904 and renders correctly in every window tried.
 const SLIDE_H_MAX = 1000
+// The floor of the density band (80 % of the ~1080px pane). A WARNING, not a violation: density is
+// a target, and a deliberately sparse slide can sit under it. Catches a thin slide before rendering;
+// `npm run density` measures the real frame.
+const SLIDE_H_MIN = 865
 const PANE = 806, PAD_X = 60, FS = 26
 const TEXT_W = PANE - PAD_X * 2 // 686
 const LI_W = TEXT_W - 30 // li has padding-left: 30
@@ -174,6 +178,7 @@ const walk = (dir) =>
   })
 
 const problems = []
+const warnings = []
 
 // --- scenes: leaf-card label/sub budget ------------------------------------------------------
 for (const file of walk('src/scenes')) {
@@ -219,6 +224,7 @@ for (const file of walk('src/content')) {
   const slide = m[1].replace(/\\`/g, '`')
   const h = slideHeight(slide)
   if (h > SLIDE_H_MAX) problems.push(`${file}  slide ${h}px > ${SLIDE_H_MAX} — clips at the bottom`)
+  else if (h < SLIDE_H_MIN) warnings.push(`${file}  slide ${h}px < ${SLIDE_H_MIN} — the pane will read empty`)
 }
 
 // --- content: every `focus` must name a node in that section's scene -------------------------
@@ -272,6 +278,7 @@ for (const file of walk('src/content')) {
   if (!existsSync(wav)) problems.push(`${file}  no narration wav at ${wav} — the section plays silence`)
 }
 
+if (warnings.length) console.warn(`! ${warnings.length} density warning(s):\n` + warnings.map((w) => '  ' + w).join('\n'))
 if (problems.length) {
   console.error(`✗ ${problems.length} content-budget violation(s):\n` + problems.map((p) => '  ' + p).join('\n'))
   process.exit(1)

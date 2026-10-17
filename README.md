@@ -34,5 +34,8 @@ public/audio/<course>/    narration wavs
 npm run build && npx tsc --noEmit && npm run check
 ```
 
+With `npm run dev` running, `npm run density` measures every frame against the density targets in
+`CLAUDE.md` and writes a screenshot per route to `.tmp/density/`.
+
 …and the section looked at in the browser — the commands pass on frames that are visually wrong.
 Routes are `#/<course>-<section>`, e.g. `#/problem-framing-learning-paradigms`. `#/` is the catalog.
