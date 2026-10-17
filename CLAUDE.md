@@ -72,6 +72,14 @@ Each course adds a `src/scenes/<courseId>/` bundle; list its scenes here as it l
 |  | `unseen-inputs` | code card → two tables | §6 |
 |  | `history-features` | 3-leaf container → table → code card | §7 |
 |  | `composite-pipeline` | code card → nested pipeline container | §8 |
+| `regression-classification` | `linear-fit` | scatter + fitted line over coefficient table | §1 |
+|  | `residuals` | residual table → 2×2 metric container | §2 |
+|  | `extrapolation` | plot (cubic fit + extrapolation) over 3-leaf container | §3 |
+|  | `logistic` | plot (sigmoid + labelled orders) over log-loss table | §4 |
+|  | `confusion` | 2×2 chain container → confusion table → 3-leaf container | §5 |
+|  | `curves` | container of ROC + PR plots → 3-leaf container | §6 |
+|  | `probability-quality` | comparison table → container of two nested containers | §7 |
+|  | `imbalance` | code card → table → 3-leaf container | §8 |
 
 ## Invariants — do not break
 
