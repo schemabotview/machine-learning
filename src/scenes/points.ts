@@ -24,3 +24,53 @@ export function circle(cx: number, cy: number, r: number, steps = 64): PlotPoint
     return [cx + r * Math.cos(t), cy + r * Math.sin(t)]
   })
 }
+
+// ---- small, exact implementations for traced clustering frames (chapter 9) ----------------------
+
+const d2 = (a: PlotPoint, b: PlotPoint) => (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2
+
+/** Lloyd's k-means from given starting centroids; returns centroids and inertia after each step. */
+export function kmeansTrace(pts: PlotPoint[], start: PlotPoint[], steps: number) {
+  let cents = start.map((c) => [...c] as PlotPoint)
+  const trace: { centroids: PlotPoint[]; inertia: number; labels: number[] }[] = []
+  for (let s = 0; s <= steps; s++) {
+    const labels = pts.map((p) => cents.reduce((best, c, j) => (d2(p, c) < d2(p, cents[best]) ? j : best), 0))
+    const inertia = pts.reduce((sum, p, i) => sum + d2(p, cents[labels[i]]), 0)
+    trace.push({ centroids: cents, inertia, labels })
+    cents = cents.map((c, j) => {
+      const mine = pts.filter((_, i) => labels[i] === j)
+      return mine.length ? ([mine.reduce((a, p) => a + p[0], 0) / mine.length, mine.reduce((a, p) => a + p[1], 0) / mine.length] as PlotPoint) : c
+    })
+  }
+  return trace
+}
+
+/** DBSCAN labels (−1 = noise), the textbook O(n²) version. */
+export function dbscan(pts: PlotPoint[], eps: number, minSamples: number): number[] {
+  const labels = pts.map(() => -2) // −2 unvisited
+  const near = (i: number) => pts.map((_, j) => j).filter((j) => d2(pts[i], pts[j]) <= eps * eps)
+  let cluster = -1
+  pts.forEach((_, i) => {
+    if (labels[i] !== -2) return
+    const nb = near(i)
+    if (nb.length < minSamples) return void (labels[i] = -1)
+    cluster++
+    labels[i] = cluster
+    const queue = [...nb]
+    while (queue.length) {
+      const j = queue.shift()!
+      if (labels[j] === -1) labels[j] = cluster
+      if (labels[j] !== -2) continue
+      labels[j] = cluster
+      const nbj = near(j)
+      if (nbj.length >= minSamples) queue.push(...nbj)
+    }
+  })
+  return labels
+}
+
+/** Normal density. */
+export const normal = (x: number, mu: number, sd: number) => Math.exp(-((x - mu) ** 2) / (2 * sd * sd)) / (sd * Math.sqrt(2 * Math.PI))
+
+/** Gaussian KDE at x from a 1-D sample. */
+export const kde = (sample: number[], h: number) => (x: number) => sample.reduce((a, s) => a + normal(x, s, h), 0) / sample.length

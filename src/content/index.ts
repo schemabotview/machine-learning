@@ -6,6 +6,7 @@ import { modelFamilies } from './model-families'
 import { treesEnsembles } from './trees-ensembles'
 import { selection } from './selection'
 import { representation } from './representation'
+import { clustering } from './clustering'
 import type { Course, Section } from './types'
 
 // Course registry, in syllabus order. Courses are added here as each is authored.
@@ -18,6 +19,7 @@ export const COURSES: Record<string, Course> = {
   [treesEnsembles.id]: treesEnsembles,
   [selection.id]: selection,
   [representation.id]: representation,
+  [clustering.id]: clustering,
 }
 
 export type { Course, Section }

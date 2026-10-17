@@ -117,6 +117,14 @@ Each course adds a `src/scenes/<courseId>/` bundle; list its scenes here as it l
 |  | `sparse-factors` | code card → NMF table → 2×2 container | §4 |
 |  | `embeddings` | t-SNE-style map over 2×2 container | §5 |
 |  | `fold-local-reduction` | search code card → components table | §6 |
+| `clustering` | `cluster-definitions` | as-of summary table → 2×2 container | §1 |
+|  | `kmeans` | scatter + centroid paths over computed trace table | §2 |
+|  | `hierarchical` | segment-drawn dendrogram + cut over linkage table | §3 |
+|  | `dbscan` | moons coloured by computed labels over eps-sweep table | §4 |
+|  | `cluster-validation` | silhouette + ARI plot over 3-leaf container | §5 |
+|  | `mixture` | mixture density plot over computed responsibility table | §6 |
+|  | `kde` | three-bandwidth KDE plot over computed held-out table | §7 |
+|  | `local-solutions` | computed restart table → 2×2 container | §8 |
 
 ## Invariants — do not break
 
