@@ -139,6 +139,12 @@ Each course adds a `src/scenes/<courseId>/` bundle; list its scenes here as it l
 |  | `fairness` | criteria table → 2×2 container | §6 |
 |  | `feedback` | 2×2 loop container → holdout table → 2-leaf container | §7 |
 |  | `model-card` | model-card table → 2-leaf container | §8 |
+| `capstone` | `manifest` | manifest table → 2×2 container | §1 |
+|  | `comparison` | config code card → results table | §2 |
+|  | `tradeoffs` | latency–log-loss frontier plot over policy table | §3 |
+|  | `final-test` | evidence-ladder table → 2×2 container | §4 |
+|  | `inference-contract` | input contract table → 2×3 artefact container | §5 |
+|  | `separate-validation` | three nested task containers → 3-leaf container | §6 |
 
 ## Invariants — do not break
 

@@ -9,6 +9,7 @@ import { representation } from './representation'
 import { clustering } from './clustering'
 import { anomaly } from './anomaly'
 import { responsibleUse } from './responsible-use'
+import { capstone } from './capstone'
 import type { Course, Section } from './types'
 
 // Course registry, in syllabus order. Courses are added here as each is authored.
@@ -24,6 +25,7 @@ export const COURSES: Record<string, Course> = {
   [clustering.id]: clustering,
   [anomaly.id]: anomaly,
   [responsibleUse.id]: responsibleUse,
+  [capstone.id]: capstone,
 }
 
 export type { Course, Section }
