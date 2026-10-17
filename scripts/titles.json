@@ -1,0 +1,15 @@
+{
+  "_comment": "Curated publish titles (YouTube title + thumbnail header) per course, keyed by course id. Search-first: what someone would actually type, never 'Course 4'. One entry per course in src/content/index.ts.",
+  "problem-framing": "Framing A Machine Learning Problem: Targets, Labels And Leakage",
+  "evaluation": "Train/Test Splits, Data Leakage And Scikit-Learn Pipelines",
+  "regression-classification": "Linear Regression, Logistic Regression And Classification Metrics",
+  "regularisation": "Ridge, Lasso And Overfitting: Regularisation Explained",
+  "model-families": "KNN, Naive Bayes, LDA And SVMs Compared",
+  "trees-ensembles": "Decision Trees, Random Forests And Gradient Boosting",
+  "selection": "Cross-Validation, Model Selection And Probability Calibration",
+  "representation": "PCA, SVD And Dimensionality Reduction",
+  "clustering": "K-Means, DBSCAN And Gaussian Mixture Models",
+  "anomaly": "Anomaly And Novelty Detection: Isolation Forest, LOF, One-Class SVM",
+  "responsible-use": "Interpreting ML Models: Permutation Importance, Fairness And Limits",
+  "capstone": "End-To-End ML Project: From Model Comparison To Engineering Handoff"
+}
