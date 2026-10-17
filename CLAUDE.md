@@ -64,6 +64,14 @@ Each course adds a `src/scenes/<courseId>/` bundle; list its scenes here as it l
 | | `sample-checks` | table → 2×2 container | §5 |
 | | `exclusion-log` | running-total table → 2×3 container | §6 |
 | | `prediction-vs-cause` | 2-leaf container → nested confounding graph | §7 |
+| `evaluation` | `split-roles` | source card → 3 containers × 4 leaves | §1 |
+|  | `split-strategies` | scatter plot (group + time cuts) over table | §2 |
+|  | `leakage-audit` | evolution (validation MAE) over audit table | §3 |
+|  | `fold-state` | TB fit→transform container ⟶ code card | §4 |
+|  | `impute-scale` | table → 2×2 container | §5 |
+|  | `unseen-inputs` | code card → two tables | §6 |
+|  | `history-features` | 3-leaf container → table → code card | §7 |
+|  | `composite-pipeline` | code card → nested pipeline container | §8 |
 
 ## Invariants — do not break
 
