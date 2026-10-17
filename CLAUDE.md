@@ -87,6 +87,14 @@ Each course adds a `src/scenes/<courseId>/` bundle; list its scenes here as it l
 |  | `early-stopping` | plot (train vs inner split) over 3-leaf container | §5 |
 |  | `learning-curves` | stacked bias + variance plots ⟶ 3-leaf column | §6 |
 |  | `complexity-costs` | cost table → 2×2 container | §7 |
+| `model-families` | `knn` | equal-axis scatter + k-circle over computed neighbour table | §1 |
+|  | `distance-k` | plot (error vs k) over 3-leaf container | §2 |
+|  | `naive-bayes` | likelihood table → arithmetic code card | §3 |
+|  | `lda-qda` | scatter + LDA line + QDA ellipse over table | §4 |
+|  | `margins` | scatter + margins + computed support vectors over C table | §5 |
+|  | `kernels` | ring data + RBF circle over gamma table | §6 |
+|  | `svr` | scatter + ε-tube over memory table | §7 |
+|  | `compare-families` | family table → 2×3 container | §8 |
 
 ## Invariants — do not break
 
@@ -157,6 +165,14 @@ the engine default is already ~0.12, so 0.12 is a no-op here; 0.17 is the value 
 Learned on chapter 1: an edge into a nested container's *card* is drawn across that container's
 header — target the container instead. A wide board (one long LR row) loses area; restack it into
 columns. Tables render small, so give them a companion node rather than standing alone.
+
+Learned on chapters 2–5: author slides to ~950–990 modelled from the first draft — rendered height
+runs 0.88–1.0× the model (lower for bold- and symbol-heavy slides), and the 1000 cap is a hard
+failure, so trim with one-line bullets rather than dropping a block. Prefer TB stacks: a code card or
+table beside a tall stack shrinks to illegible. For an equal-axis plot that binds on height, widen its
+x-range rather than lowering padding (lower padding pushes it under the eyebrow). Plot geometry that
+a slide quotes (neighbours, support vectors, tube violations) is COMPUTED in the scene file from the
+seeded points in `points.ts`, never typed in, so slide and frame cannot disagree.
 
 These are read off the rendered route by eye — `check` models no density at all. The two ratios come
 from one repo's ~80 frames of diagram-and-code-card boards, so a deliberately sparse board can sit
