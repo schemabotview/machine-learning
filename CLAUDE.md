@@ -111,6 +111,12 @@ Each course adds a `src/scenes/<courseId>/` bundle; list its scenes here as it l
 |  | `thresholds` | cost-curve plot over computed count table | §6 |
 |  | `intervals` | quantile-band plot over coverage table | §7 |
 |  | `recommendation` | 2×2 sequence container → record table | §8 |
+| `representation` | `reduce-choices` | methods table → container of two nested containers | §1 |
+|  | `pca` | equal-axis scatter + PC arrows over code card | §2 |
+|  | `explained-variance` | scree + cumulative plot over loadings table | §3 |
+|  | `sparse-factors` | code card → NMF table → 2×2 container | §4 |
+|  | `embeddings` | t-SNE-style map over 2×2 container | §5 |
+|  | `fold-local-reduction` | search code card → components table | §6 |
 
 ## Invariants — do not break
 

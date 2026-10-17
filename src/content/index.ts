@@ -5,6 +5,7 @@ import { regularisation } from './regularisation'
 import { modelFamilies } from './model-families'
 import { treesEnsembles } from './trees-ensembles'
 import { selection } from './selection'
+import { representation } from './representation'
 import type { Course, Section } from './types'
 
 // Course registry, in syllabus order. Courses are added here as each is authored.
@@ -16,6 +17,7 @@ export const COURSES: Record<string, Course> = {
   [modelFamilies.id]: modelFamilies,
   [treesEnsembles.id]: treesEnsembles,
   [selection.id]: selection,
+  [representation.id]: representation,
 }
 
 export type { Course, Section }
