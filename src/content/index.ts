@@ -1,6 +1,7 @@
 import { problemFraming } from './problem-framing'
 import { evaluation } from './evaluation'
 import { regressionClassification } from './regression-classification'
+import { regularisation } from './regularisation'
 import type { Course, Section } from './types'
 
 // Course registry, in syllabus order. Courses are added here as each is authored.
@@ -8,6 +9,7 @@ export const COURSES: Record<string, Course> = {
   [problemFraming.id]: problemFraming,
   [evaluation.id]: evaluation,
   [regressionClassification.id]: regressionClassification,
+  [regularisation.id]: regularisation,
 }
 
 export type { Course, Section }

@@ -80,6 +80,13 @@ Each course adds a `src/scenes/<courseId>/` bundle; list its scenes here as it l
 |  | `curves` | container of ROC + PR plots → 3-leaf container | §6 |
 |  | `probability-quality` | comparison table → container of two nested containers | §7 |
 |  | `imbalance` | code card → table → 3-leaf container | §8 |
+| `regularisation` | `capacity` | plot (train vs validation by degree) over 3-leaf container | §1 |
+|  | `penalty-paths` | stacked ridge + lasso path plots ⟶ code card | §2 |
+|  | `sparsity-stability` | scatter (twin features) over bootstrap table | §3 |
+|  | `optimisation` | plot (three loss traces) over 3-leaf container | §4 |
+|  | `early-stopping` | plot (train vs inner split) over 3-leaf container | §5 |
+|  | `learning-curves` | stacked bias + variance plots ⟶ 3-leaf column | §6 |
+|  | `complexity-costs` | cost table → 2×2 container | §7 |
 
 ## Invariants — do not break
 
