@@ -95,6 +95,14 @@ Each course adds a `src/scenes/<courseId>/` bundle; list its scenes here as it l
 |  | `kernels` | ring data + RBF circle over gamma table | §6 |
 |  | `svr` | scatter + ε-tube over memory table | §7 |
 |  | `compare-families` | family table → 2×3 container | §8 |
+| `trees-ensembles` | `tree-split` | split table → depth-2 tree of cards | §1 |
+|  | `tree-complexity` | plot (log loss vs depth) over resample table | §2 |
+|  | `forest` | source card → 3 trees → average → seed table | §3 |
+|  | `boosting` | one-round table → 2×2 container | §4 |
+|  | `learning-rate` | plot (two learning rates) over code card | §5 |
+|  | `stacking` | 2×2 base models → out-of-fold table → meta card | §6 |
+|  | `importance` | importance table → 2×2 container | §7 |
+|  | `tree-tradeoffs` | candidate table → 2×2 container | §8 |
 
 ## Invariants — do not break
 
