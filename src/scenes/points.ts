@@ -74,3 +74,55 @@ export const normal = (x: number, mu: number, sd: number) => Math.exp(-((x - mu)
 
 /** Gaussian KDE at x from a 1-D sample. */
 export const kde = (sample: number[], h: number) => (x: number) => sample.reduce((a, s) => a + normal(x, s, h), 0) / sample.length
+
+// ---- anomaly scores for chapter 10 ---------------------------------------------------------------
+
+const dist = (a: PlotPoint, b: PlotPoint) => Math.hypot(a[0] - b[0], a[1] - b[1])
+
+/** Local outlier factor of `q` against reference points `ref` (q itself excluded), k neighbours. */
+export function lof(ref: PlotPoint[], q: PlotPoint, k: number): number {
+  const knn = (p: PlotPoint, pool: PlotPoint[]) => pool.filter((o) => o !== p).map((o) => ({ o, d: dist(p, o) })).sort((a, b) => a.d - b.d).slice(0, k)
+  const kdist = (p: PlotPoint) => knn(p, ref)[k - 1].d
+  const lrd = (p: PlotPoint, pool: PlotPoint[]) => 1 / (knn(p, pool).reduce((s, { o, d }) => s + Math.max(kdist(o), d), 0) / k)
+  const pool = ref.filter((o) => o !== q)
+  const neighbours = knn(q, pool)
+  return neighbours.reduce((s, { o }) => s + lrd(o, ref), 0) / k / lrd(q, pool)
+}
+
+/** Isolation-forest anomaly score in (0, 1): ≈ 0.5 ordinary, → 1 easy to isolate. Seeded. */
+export function isolationScores(train: PlotPoint[], queries: PlotPoint[], trees = 200, sub = 64, seed = 7): number[] {
+  const r = rng(seed)
+  const c = (n: number) => (n <= 1 ? 0 : 2 * (Math.log(n - 1) + 0.5772156649) - (2 * (n - 1)) / n)
+  const limit = Math.ceil(Math.log2(sub))
+  type T = { leaf: true; n: number } | { leaf: false; f: 0 | 1; v: number; l: T; r: T }
+  const grow = (pts: PlotPoint[], depth: number): T => {
+    if (depth >= limit || pts.length <= 1) return { leaf: true, n: pts.length }
+    const f = (r() < 0.5 ? 0 : 1) as 0 | 1
+    const lo = Math.min(...pts.map((p) => p[f]))
+    const hi = Math.max(...pts.map((p) => p[f]))
+    if (lo === hi) return { leaf: true, n: pts.length }
+    const v = lo + r() * (hi - lo)
+    return { leaf: false, f, v, l: grow(pts.filter((p) => p[f] < v), depth + 1), r: grow(pts.filter((p) => p[f] >= v), depth + 1) }
+  }
+  const path = (t: T, p: PlotPoint, depth: number): number => (t.leaf ? depth + c(t.n) : path(p[t.f] < t.v ? t.l : t.r, p, depth + 1))
+  const forest = Array.from({ length: trees }, () => {
+    const pick = Array.from({ length: Math.min(sub, train.length) }, () => train[Math.floor(r() * train.length)])
+    return grow(pick, 0)
+  })
+  const cn = c(Math.min(sub, train.length))
+  return queries.map((q) => 2 ** (-forest.reduce((s, t) => s + path(t, q, 0), 0) / forest.length / cn))
+}
+
+/** Mahalanobis distance of q under the sample mean and covariance of pts (2-D). */
+export function mahalanobis(pts: PlotPoint[], q: PlotPoint): number {
+  const n = pts.length
+  const mx = pts.reduce((a, p) => a + p[0], 0) / n
+  const my = pts.reduce((a, p) => a + p[1], 0) / n
+  const sxx = pts.reduce((a, p) => a + (p[0] - mx) ** 2, 0) / (n - 1)
+  const syy = pts.reduce((a, p) => a + (p[1] - my) ** 2, 0) / (n - 1)
+  const sxy = pts.reduce((a, p) => a + (p[0] - mx) * (p[1] - my), 0) / (n - 1)
+  const det = sxx * syy - sxy * sxy
+  const dx = q[0] - mx
+  const dy = q[1] - my
+  return Math.sqrt((syy * dx * dx - 2 * sxy * dx * dy + sxx * dy * dy) / det)
+}

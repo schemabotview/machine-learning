@@ -125,6 +125,12 @@ Each course adds a `src/scenes/<courseId>/` bundle; list its scenes here as it l
 |  | `mixture` | mixture density plot over computed responsibility table | §6 |
 |  | `kde` | three-bandwidth KDE plot over computed held-out table | §7 |
 |  | `local-solutions` | computed restart table → 2×2 container | §8 |
+| `anomaly` | `unusual-contract` | contract table → 2×2 container | §1 |
+|  | `outlier-novelty` | container of two nested settings → API table | §2 |
+|  | `lof-isolation` | scatter + probes over computed LOF / isolation table | §3 |
+|  | `covariance` | scatter + Mahalanobis ellipse → computed table → 2-leaf container | §4 |
+|  | `alert-budget` | alerts-vs-threshold plot → table → 2-leaf container | §5 |
+|  | `shift` | alert-rate-by-zone plot over 2×2 container | §6 |
 
 ## Invariants — do not break
 
